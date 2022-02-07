@@ -3,7 +3,7 @@
         <nav class="pull-left">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="https://ophelia-sensors.com/">
+                    <a class="nav-link" href="PM GROUPE/">
                         Website
                     </a>
                 </li>
@@ -20,7 +20,7 @@
             </ul>
         </nav>
         <div class="copyright ml-auto">
-            {{ date("Y ")}}, made with <i class="fa fa-heart heart text-danger"></i> by <a href="mailto:victor.fonne@ophelia-sensors.com">Dassi</a>
+            {{ date("Y ")}}, made with <i class="fa fa-heart heart text-danger"></i> by <a href="github.com/dassimanuel000/">D/D</a>
         </div>
     </div>
 </footer>

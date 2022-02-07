@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link rel="icon" href="https://ophelia-sensors.com/img/common/favicon.ico" type="image/png">
+  <link rel="icon" href="https://i.ibb.co/HpJN8FL/EV.png" type="image/png">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
@@ -44,7 +44,7 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-          <a href="/"><img src="https://ophelia-sensors.com/img/common/logo-ophelia.png" alt="" class="img-fluid"></a>
+          <a href="/"><img src="https://i.ibb.co/HpJN8FL/EV.png" alt="" class="img-fluid"></a>
       </div>
 
       <nav id="navbar" class="navbar">
@@ -68,7 +68,7 @@
     <div class="container">
       <div class="row gy-4">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1>Test for  Ophelia, with Ophelia</h1>
+          <h1>Test for  PM GROUP, with PM GROUP</h1>
           <h2>Hire me</h2>
           <div>
             <a href="/dashboard" class="btn-get-started scrollto">Go To Dashboard</a>
@@ -276,10 +276,10 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Ophelia</h3>
+            <h3>PM GROUP</h3>
             <p>
               <strong>Phone:</strong>+33 1 42 74 59 21<br>
-              <strong>Email:</strong>info@ophelia-sensors.com<br>
+              <strong>Email:</strong>info@paris.com<br>
             </p>
           </div>
 
@@ -287,7 +287,7 @@
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="https://portal.ophelia-sensors.com/shop?&search=Geocube">Geocube</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://portal.paris.com/shop?&search=Geocube">Geocube</a></li>
             </ul>
           </div>
 
@@ -316,7 +316,7 @@
 
     <div class="container py-4">
       <div class="copyright">
-        &copy; Copyright <strong><span>Ophelia</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>PM GROUP</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
           Designed by <a href="https://ceo.life-cm.com/">Me</a>

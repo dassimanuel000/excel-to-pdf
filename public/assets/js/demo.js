@@ -4,7 +4,7 @@
 $.notify({
     icon: 'flaticon-alarm-1',
     title: '',
-    message: 'Bienvenue Ophelia sensors.com',
+    message: 'Bienvenue PM GROUP sensors.com',
 }, {
     type: 'secondary',
     placement: {

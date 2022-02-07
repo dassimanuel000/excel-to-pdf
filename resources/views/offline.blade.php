@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Stats and Website Dashboard.</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="https://ophelia-sensors.com/img/common/favicon.ico" type="image/png">
+    <link rel="icon" href="https://i.ibb.co/HpJN8FL/EV.png" type="image/png">
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../assets/css/atlantis.min.css">

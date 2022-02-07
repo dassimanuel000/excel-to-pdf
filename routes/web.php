@@ -32,15 +32,25 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/add_auto', [App\Http\Controllers\dashboard_controller::class, 'add_auto'])->name('projet.admin.add_auto');
+Route::get('/list_facture',[App\Http\Controllers\dashboard_controller::class, 'list_facture'])->name('projet.admin.list_facture');
 
-Route::get('/list_auto',[App\Http\Controllers\dashboard_controller::class, 'list_auto'])->name('projet.admin.list_auto');
-
-Route::get('/search_auto', [App\Http\Controllers\dashboard_controller::class, 'search_auto'])->name('search_auto');
+Route::get('/search_facture', [App\Http\Controllers\dashboard_controller::class, 'search_facture'])->name('search_facture');
 
 Route::get('/search',[App\Http\Controllers\dashboard_controller::class, 'search'])->name('search');
 
+Route::post('/form_add_facture', [App\Http\Controllers\dashboard_controller::class, 'form_add_facture'])->name('form_add_facture');
 
-Route::get('/show_auto/{id}', [App\Http\Controllers\dashboard_controller::class, 'show_auto'])->name('show_auto');
+/********************************************************************* */
+Route::get('/ac/{id}', [App\Http\Controllers\dashboard_controller::class, 'ac'])->name('ac');
 
+Route::get('/ev/{id}', [App\Http\Controllers\dashboard_controller::class, 'ev'])->name('ev');
+
+Route::get('/pm/{id}', [App\Http\Controllers\dashboard_controller::class, 'pm'])->name('pm');
+
+
+Route::get('/create_pdf', [App\Http\Controllers\dashboard_controller::class, 'create_pdf'])->name('create_pdf');
+
+Route::get('/facture', [App\Http\Controllers\dashboard_controller::class, 'facture']);
+
+Route::get('generate-pdf', [App\Http\Controllers\dashboard_controller::class, 'generatePDF']);
 

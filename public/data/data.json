@@ -1,0 +1,104 @@
+{
+"AC CONSEILS":[
+ {
+  "NUMERO FACTURE ": "21-05-1799",
+  "DATE ENCAISSEMENT ": "24\/05\/2021",
+  "NOM ": "TARVERNIER",
+  "PRENOM ": "Alexis",
+  "ADRESSE ": "26 Rue Frères Ravaux\n13200 ARLES\r",
+  "MONTANT ": 830
+ },
+ {
+  "NUMERO FACTURE ": null,
+  "DATE ENCAISSEMENT ": null,
+  "NOM ": null,
+  "PRENOM ": null,
+  "ADRESSE ": null,
+  "MONTANT ": null
+ },
+ {
+  "NUMERO FACTURE ": "21-06-1800",
+  "DATE ENCAISSEMENT ": "01\/06\/2021",
+  "NOM ": "DIDIER",
+  "PRENOM ": "Désiré",
+  "ADRESSE ": "2 Allée des Futreaux\n37540 ST CYR SUR LOIRE\r",
+  "MONTANT ": 1200
+ },
+ {
+  "NUMERO FACTURE ": "21-06-1801",
+  "DATE ENCAISSEMENT ": "01\/06\/2021",
+  "NOM ": "BRETON",
+  "PRENOM ": "Martine",
+  "ADRESSE ": "136 avenue de la République\n75012 PARIS ",
+  "MONTANT ": 550
+ }
+],
+"PM GROUPE FRANCE":[
+ {
+  "NUMERO FACTURE ": "21-05-1799",
+  "DATE ENCAISSEMENT ": "24\/05\/2021",
+  "NOM ": "SAVIGNAC",
+  "PRENOM ": "Alexis",
+  "ADRESSE ": "26 Rue Frères Ravaux\n13200 ARLES\r",
+  "MONTANT ": 830
+ },
+ {
+  "NUMERO FACTURE ": null,
+  "DATE ENCAISSEMENT ": null,
+  "NOM ": null,
+  "PRENOM ": null,
+  "ADRESSE ": null,
+  "MONTANT ": null
+ },
+ {
+  "NUMERO FACTURE ": "21-06-1800",
+  "DATE ENCAISSEMENT ": "01\/06\/2021",
+  "NOM ": "DIDIER",
+  "PRENOM ": "Désiré",
+  "ADRESSE ": "2 Allée des Futreaux\n37540 ST CYR SUR LOIRE\r",
+  "MONTANT ": 1200
+ },
+ {
+  "NUMERO FACTURE ": "21-06-1801",
+  "DATE ENCAISSEMENT ": "01\/06\/2021",
+  "NOM ": "BRETON",
+  "PRENOM ": "Martine",
+  "ADRESSE ": "136 avenue de la République\n75012 PARIS ",
+  "MONTANT ": 550
+ }
+],
+"EVOUTION PROFESSIONNELLE":[
+ {
+  "NUMERO FACTURE ": "21-05-1799",
+  "DATE ENCAISSEMENT ": "24\/05\/2021",
+  "NOM ": "SAVIGNAC",
+  "PRENOM ": "Alexis",
+  "ADRESSE ": "26 Rue Frères Ravaux\n13200 ARLES\r",
+  "MONTANT ": 830
+ },
+ {
+  "NUMERO FACTURE ": null,
+  "DATE ENCAISSEMENT ": null,
+  "NOM ": null,
+  "PRENOM ": null,
+  "ADRESSE ": null,
+  "MONTANT ": null
+ },
+ {
+  "NUMERO FACTURE ": "21-06-1800",
+  "DATE ENCAISSEMENT ": "01\/06\/2021",
+  "NOM ": "DIDIER",
+  "PRENOM ": "Désiré",
+  "ADRESSE ": "2 Allée des Futreaux\n37540 ST CYR SUR LOIRE\r",
+  "MONTANT ": 1200
+ },
+ {
+  "NUMERO FACTURE ": "21-06-1801",
+  "DATE ENCAISSEMENT ": "01\/06\/2021",
+  "NOM ": "BRETON",
+  "PRENOM ": "Martine",
+  "ADRESSE ": "136 avenue de la République\n75012 PARIS ",
+  "MONTANT ": 550
+ }
+]
+}

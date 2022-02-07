@@ -3,12 +3,12 @@
         <div class="sidebar-content">
             <div class="user">
                 <div class="avatar-sm float-left mr-2">
-                    <img src="https://ophelia-sensors.com/img/common/favicon.ico" alt="..." class="avatar-img rounded-circle">
+                    <img src="https://i.ibb.co/HpJN8FL/EV.png" alt="..." class="avatar-img rounded-circle">
                 </div>
                 <div class="info">
                     <a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
                         <span>
-                            Ophelia | Mr Admin
+                            PM GROUP | Mr Admin
                             <span class="user-level">Administrator</span>
                             <span class="caret"></span>
                         </span>
@@ -66,19 +66,19 @@
                 ">
                     <a data-toggle="collapse" href="#base">
                         <i class="fas fa-layer-group"></i>
-                        <p>Véhicules</p>
+                        <p>Une Facture</p>
                         <span class="caret"></span>
                     </a>
                     <div class="collapse" id="base">
                         <ul class="nav nav-collapse">
                             <li class="{{  'add_auto' == request()->path() ? 'active open' : '' }}">
                                 <a href="/add_auto">
-                                    <span class="sub-item">Ajouter un Véhicules</span>
+                                    <span class="sub-item">Ajouter Une Facture</span>
                                 </a>
                             </li>
                             <li class="@if(Route::currentRouteName() == 'admin.list_auto') active open @endif @if(Route::currentRouteName() == 'edit_auto') active open @endif ">
                                 <a href="/list_auto">
-                                    <span class="sub-item">Listes des Véhicules</span>
+                                    <span class="sub-item">Listes des Factures</span>
                                 </a>
                             </li>
 
@@ -87,7 +87,7 @@
                 </li>
 
                 <li class="mx-4 mt-2">
-                    <a href="/search" class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i class="fa fa-search"></i> </span>Rechercher un Véhicule</a>
+                    <a href="/search" class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i class="fa fa-search"></i> </span>Rechercher Une Facture</a>
                 </li>
             </ul>
         </div>

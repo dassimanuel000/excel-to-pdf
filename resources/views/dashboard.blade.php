@@ -3,8 +3,8 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Stats and Website Dashboard.</title>
-	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-    <link rel="icon" href="https://ophelia-sensors.com/img/common/favicon.ico" type="image/png">
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewporT ' />
+    <link rel="icon" href="https://i.ibb.co/HpJN8FL/EV.png" type="image/png">
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="../assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../assets/css/atlantis.min.css">
@@ -15,7 +15,7 @@
 
 @php
     use Carbon\Carbon;
-    $l = storage_path('../storage/framework/cache/data/json.json');
+    $l = './data/data.json';
     $json = json_decode(file_get_contents($l), true);
 
 
@@ -36,79 +36,190 @@
                 <div class="page-inner mt--5">
 					<div class="row mt--2">
 						<div class="col-md-6">
+                            @if (session('status_err'))
+                                <div class="col-md-12">
+                                    ERROr
+                                </div>
+                            @endif
+							<div class="card full-height shadow">
+								<div class="card-body">
+									<h3>Ajouter Le nouveau fichier</h3>
+                                    <form action="{{ route('form_add_facture') }}" method="POST" enctype="multipart/form-data" class="form-horizontal" role="form">
+                                        {{ csrf_field() }}
+                                        <div class="form-group">
+                                            <label class="col-md-4 control-label">Choississez le fichier</label>
+                                            <div class="col-md-9">
+                                                <input id="image" type="file" class="form-control" name="image" required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-success" type="submit">Add new factures</button>
+                                        </div>
+                                    </form>
+								</div>
+							</div>
+						</div>
+                        <div class="col-md-12">
 
-							<div class="card full-height shadow">
-								<div class="card-body">
-									<div class="card-title">Overall statistics</div>
-									<div class="card-category">Last Updated: {{ count($json)}} auto<br>Du {{ date('l jS \of F Y h:i:s A') }}</div>
-									<div class="d-flex flex-wrap justify-content-around pb-2 pt-4">
-										<div class="px-2 pb-2 pb-md-0 text-center">
-											<div id="circles-1"></div>
-											<h6 class="fw-bold mt-3 mb-0"> Requêtes en Cours</h6>
-										</div>
-										<div class="px-2 pb-2 pb-md-0 text-center">
-											<div id="circles-2"></div>
-											<h6 class="fw-bold mt-3 mb-0">Véhicules </h6>
-										</div>
-										<div class="px-2 pb-2 pb-md-0 text-center">
-											<div id="circles-3"></div>
-											<h6 class="fw-bold mt-3 mb-0">Utilisateurs</h6>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="card full-height shadow">
-								<div class="card-body">
-									<div class="card-title">Total Véhicules & Les statistics</div>
-									<div class="row py-3">
-										<div class="col-md-4 d-flex flex-column justify-content-around">
-											<div>
-												<h6 class="fw-bold text-uppercase text-success op-8">Total Véhicules</h6>
-												<h3 class="fw-bold"> {{ count($json)}} </h3>
-											</div>
-										</div>
-										<div class="col-md-8">
-											<div id="chart-container">
-												<canvas id="totalIncomeChart"></canvas>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="page-inner mt--5">
-					<div class="row">
-						<div class="col-sm-6 col-lg-3">
-							<div class="card p-3">
-								<div class="d-flex align-items-center">
-									<span class="stamp stamp-md bg-secondary mr-2">
-										<i class="fas fa-eye"></i>
-									</span>
-									<div>
-										<h5 class="mb-1"><b><a href="#url">La VITESSE MAX  :<small></small></a></b></h5>
-                                        
-										<small class="text-muted">                                             
-                                            @php
-                                             $max = 0;
-                                                /*for ($i =  (count($json)-1); $i > 1; $i--){
-                                                   
-                                                    if (($json[$i]["Production"]) > $json[$i-1]["Production"]) {
-                                                        $max = $i;
-                                                    }
-                                                    
-                                                    echo json_encode($max);
-                                                }*/
-                                            @endphp
-                                        </small>
-									</div>
-								</div>
-							</div>
-						</div>
-						
+                                
+
+                                @if (session('status'))
+                                <div class="alert alert-success">
+                                    {{ session('status') }} 
+                                </div>
+                                @endif
+                            
+                                <table id="table" style="" class="table responsive-table responsive">
+                                    <tr>
+                                        <th>
+                                            COMPAGNIES
+                                        </th>
+                                        <th>
+                                            NUMERO FACTURE 
+                                        </th>
+                                        <th>
+                                            DATE ENCAISSEMENT
+                                        </th>
+                                        <th>
+                                            NOM
+                                        </th>
+                                        <th>
+                                            PRENOM
+                                        </th>
+                                        <th>
+                                            ADRESSE
+                                        </th>
+                                        <th>
+                                            MONTANT
+                                        </th>
+                                    </tr>
+                                    <tbody>
+                                        @for ($i = 0; $i < count($json["AC CONSEILS"]); $i++)
+                                        <tr>
+                                            <td>
+                                                AC CONSEILS
+                                            </td>
+                                            <th>
+                                                @php
+                                                    echo $json["AC CONSEILS"][$i]['NUMERO FACTURE '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                @php
+                                                    echo $json["AC CONSEILS"][$i]['DATE ENCAISSEMENT '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                @php
+                                                    echo $json["AC CONSEILS"][$i]['NOM '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                @php
+                                                    echo $json["AC CONSEILS"][$i]['PRENOM '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                @php
+                                                    echo $json["AC CONSEILS"][$i]['ADRESSE '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                @php
+                                                    echo $json["AC CONSEILS"][$i]['MONTANT '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                <a href="/ac/{{$i}}" class="btn btn-small btn-primary"> Génerer {{$json["AC CONSEILS"][$i]['NOM ']}}</a>
+                                            </th>
+                                        </tr>
+                                        @endfor
+                                        @for ($i = 0; $i < count($json["PM GROUPE FRANCE"]); $i++)
+                                        <tr>
+                                            <td>
+                                                PM GROUPE FRANCE
+                                            </td>
+                                            <th>
+                                                @php
+                                                    echo $json["PM GROUPE FRANCE"][$i]['NUMERO FACTURE '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                @php
+                                                    echo $json["PM GROUPE FRANCE"][$i]['DATE ENCAISSEMENT '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                @php
+                                                    echo $json["PM GROUPE FRANCE"][$i]['NOM '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                @php
+                                                    echo $json["PM GROUPE FRANCE"][$i]['PRENOM '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                @php
+                                                    echo $json["PM GROUPE FRANCE"][$i]['ADRESSE '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                @php
+                                                    echo $json["PM GROUPE FRANCE"][$i]['MONTANT '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                <a href="/pm/{{$i}}" class="btn btn-small btn-primary"> Génerer {{$json["PM GROUPE FRANCE"][$i]['NOM ']}}</a>
+                                            </th>
+                                        </tr>
+                                        @endfor
+                                        @for ($i = 0; $i < count($json["EVOUTION PROFESSIONNELLE"]); $i++)
+                                        <tr>
+                                            <td>
+                                                EVOUTION PROFESSIONNELLE
+                                            </td>
+                                            <th>
+                                                @php
+                                                    echo $json["EVOUTION PROFESSIONNELLE"][$i]['NUMERO FACTURE '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                @php
+                                                    echo $json["EVOUTION PROFESSIONNELLE"][$i]['DATE ENCAISSEMENT '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                @php
+                                                    echo $json["EVOUTION PROFESSIONNELLE"][$i]['NOM '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                @php
+                                                    echo $json["EVOUTION PROFESSIONNELLE"][$i]['PRENOM '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                @php
+                                                    echo $json["EVOUTION PROFESSIONNELLE"][$i]['ADRESSE '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                @php
+                                                    echo $json["EVOUTION PROFESSIONNELLE"][$i]['MONTANT '];
+                                                @endphp
+                                            </th>
+                                            <th>
+                                                <a href="/ev/{{$i}}" class="btn btn-small btn-primary"> Génerer {{$json["EVOUTION PROFESSIONNELLE"][$i]['NOM ']}}</a>
+                                            </th>
+                                        </tr>
+                                        @endfor
+                                       
+                                    </tbody>
+                                </table>
+                                <a href="/facture" class="btn btn-primary btn-block">Génerer les factures en PDF</a>
+                            
+                        </div>
 					</div>
 				</div>
 			</div>
@@ -122,176 +233,6 @@
 	</div>
 	<!--   Core JS Files   -->
 	@include('dashboard.script')
-
-<script>
-    Circles.create({
-        id:'circles-1',
-        radius:45,
-        value: 42,
-        maxValue:100,
-        width:9,
-        text: 6,
-        colors:['#f1f1f1', '#FF9E27'],
-        duration:400,
-        wrpClass:'circles-wrp',
-        textClass:'circles-text',
-        styleWrapper:true,
-        styleText:true
-    })
-
-    Circles.create({
-        id:'circles-2',
-        radius:45,
-        value: 99,
-        maxValue:100,
-        width:10,
-        text: {{ count($json)}},
-        colors:['#f1f1f1', '#2BB930'],
-        duration:400,
-        wrpClass:'circles-wrp',
-        textClass:'circles-text',
-        styleWrapper:true,
-        styleText:true
-    })
-
-    Circles.create({
-        id:'circles-3',
-        radius:45,
-        value:100,
-        maxValue:100,
-        width: 10,
-        text: "1",
-        colors:['#f1f1f1', '#F25961'],
-        duration:400,
-        wrpClass:'circles-wrp',
-        textClass:'circles-text',
-        styleWrapper:true,
-        styleText:true
-    })
-
-    Circles.create({
-        id: 'task-complete',
-        radius: 50,
-        value: 879,
-        maxValue: 100,
-        width: 5,
-        text: function(value) { return value + '%'; },
-        colors: ['#36a3f7', '#fff'],
-        duration: 400,
-        wrpClass: 'circles-wrp',
-        textClass: 'circles-text',
-        styleWrapper: true,
-        styleText: true
-    })
-
-    var totalIncomeChart = document.getElementById('totalIncomeChart').getContext('2d');
-
-		var mytotalIncomeChart = new Chart(totalIncomeChart, {
-			type: 'bar',
-			data: {
-				labels: [
-                    @php
-                        for ($i = 0; $i < count($json); $i++){
-                            echo "'".$json[$i]["Nom"]."',";
-                        }
-                    @endphp
-                ],
-				datasets : [{
-					label: "Numéro Véhicules",
-					backgroundColor: '#ff9e27',
-					borderColor: 'rgb(23, 125, 255)',
-					data: [
-                        @php
-                            for ($i = 0; $i < count($json); $i++){
-                                echo $i.",";
-                            }
-                        @endphp
-                    ],
-				}],
-			},
-			options: {
-				responsive: true,
-				maintainAspectRatio: false,
-				legend: {
-					display: false,
-				},
-				scales: {
-					yAxes: [{
-						ticks: {
-							display: false //this will remove only the label
-						},
-						gridLines : {
-							drawBorder: false,
-							display : false
-						}
-					}],
-					xAxes : [ {
-						gridLines : {
-							drawBorder: false,
-							display : false
-						}
-					}]
-				},
-			}
-		});
-
-
-
-    $('#lineChart').sparkline([105,103,123,100,95,105,115], {
-        type: 'line',
-        height: '70',
-        width: '100%',
-        lineWidth: '2',
-        lineColor: '#ffa534',
-        fillColor: 'rgba(255, 165, 52, .14)'
-    });
-</script>
-
-<script>
-    multipleBarChart_most = document.getElementById('multipleBarChart_most').getContext('2d');
-    var myMultipleBarChart_most = new Chart(multipleBarChart_most, {
-        type: 'bar',
-        data: {
-            labels: ["edz", "ze", "poc"],
-            datasets : [{
-                label: "Les Pages les plus consultées",
-                backgroundColor: '#59d05d',
-                borderColor: '#59d05d',
-                data: [
-                    @php
-                        for ($i = 0; $i < 15; $i++){
-                            echo "7,";
-                        }
-                    @endphp
-                ],
-            }],
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            legend: {
-                position : 'bottom'
-            },
-            title: {
-                display: true,
-                text: 'Nos liens Stats'
-            },
-            tooltips: {
-                mode: 'index',
-                intersect: false
-            },
-            responsive: true,
-            scales: {
-                xAxes: [{
-                    stacked: true,
-                }],
-                yAxes: [{
-                    stacked: true
-                }]
-            }
-        }
-    });
-</script>
 
 </body>
 </html>
