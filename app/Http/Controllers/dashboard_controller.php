@@ -52,6 +52,29 @@ class dashboard_controller extends Controller
         return view('dashboard.search_facture');
     }
 
+    
+    public function form_add_sci(Request $request)
+    {
+        if ($request) {
+            if ($request->hasFile('image')) {
+                $file = $request->file('image');
+                $extension = $file->getClientOriginalExtension();// extension
+                $filename = 'data_sci.'.$extension;
+                $file->move('data/', $filename);
+                if ($file) {
+                    return redirect('search')->with('status', 'FACTURES DONES!');
+                }else {
+                    return redirect('/search')->with('status_err', $request);
+                }
+            }else {
+                return $request;
+            }
+
+        } else {
+            return redirect('search')->with('status', 'Profile ERROR!');
+        }
+    }
+
     public function search_facture(Request $request)
     {
 
@@ -137,12 +160,12 @@ class dashboard_controller extends Controller
 
     public function generatePDF()
     {
-        $l = ('./data/data.json');
+        $l = ('./data/data_sci.json');
         $json = json_decode(file_get_contents($l), true);
 
         //return json_encode($json);
         $i = count($json);
-        return view('factureEV')->with('i', $i);
+        return view('factureSCIPM')->with('i', $i);
         /*for ($i=0; $i < 1; $i++) { 
             $filename = 'NOM PDF';
             $data = ['title' => 'Welcome to ItSolutionStuff.com'];
@@ -232,6 +255,43 @@ class dashboard_controller extends Controller
             return $pdf->download(''.$filename.'.pdf');
         } else {
             return redirect('dashboard')->with('Echec', 'UN ERREUR TROP GRAVE!');
+        }
+        
+
+    }
+
+    
+    public function sci_pm($id)
+    {
+        $l = ('./data/data_sci.json');
+        $json = json_decode(file_get_contents($l), true);
+
+        $filename = date('Y m d ').'PM GROUPE FRANCE '.$json["SCI VERS PM GROUPE"][$id]["NOM"];
+        $array = ['i' => $id ];
+        $pdf = PDF::loadView('factureSCIPM', $array)->save('./results/'.$filename.'.pdf');
+        
+        if ($pdf) {
+            return $pdf->download(''.$filename.'.pdf');
+        } else {
+            return redirect('search')->with('Echec', 'UN ERREUR TROP GRAVE!');
+        }
+        
+
+    }
+
+    public function sci_ar($id)
+    {
+        $l = ('./data/data_sci.json');
+        $json = json_decode(file_get_contents($l), true);
+
+        $filename = date('Y m d ').'AGENCE RECRUTEMENT '.$json['SCI VERS AGENCE RECRUTEMENT'][$id]["NOM"];
+        $array = ['i' => $id ];
+        $pdf = PDF::loadView('factureSCIAR', $array)->save('./results/'.$filename.'.pdf');
+        
+        if ($pdf) {
+            return $pdf->download(''.$filename.'.pdf');
+        } else {
+            return redirect('search')->with('Echec', 'UN ERREUR TROP GRAVE!');
         }
         
 

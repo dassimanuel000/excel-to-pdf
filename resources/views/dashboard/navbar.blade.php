@@ -87,7 +87,7 @@
                 </li>
 
                 <li class="mx-4 mt-2">
-                    <a href="/search" class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i class="fa fa-search"></i> </span>Rechercher Une Facture</a>
+                    <a href="/search" class="btn btn-primary btn-block"><span class="btn-label mr-2"> <i class="fa fa-smile"></i> </span>Factures SCI </a>
                 </li>
             </ul>
         </div>
