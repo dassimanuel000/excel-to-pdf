@@ -126,7 +126,7 @@
                                 <div class="card full-height">
                                     <div class="card-header">
                                         <div class="card-head-row">
-                                            <div class="card-title">SCI VERS AGENCE RECRUTEMENT</div>
+                                            <div class="card-title" style="position: sticky; top: 0;">SCI VERS AGENCE RECRUTEMENT</div>
                                         </div>
                                     </div>
                                     <div class="card-body">
@@ -168,7 +168,7 @@
                                                     </td>
                                                     
                                                     <td>
-                                                        <a href="/sci_ar/{{$i}}" class="btn btn-small btn-primary"> Génerer {{ $json["SCI VERS PM GROUPE"][$i]['NOM']}}</a>
+                                                        <a href="/sci_ar/{{$i}}" class="btn btn-small btn-default"> Génerer {{ $json["SCI VERS PM GROUPE"][$i]['NOM']}}</a>
                                                     </td>
                                                 </tr>
                                                 @endfor

@@ -32,7 +32,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/list_facture',[App\Http\Controllers\dashboard_controller::class, 'list_facture'])->name('projet.admin.list_facture');
+Route::get('/list_facture',[App\Http\Controllers\dashboard_controller::class, 'list_facture'])->name('admin.list_facture');
 
 Route::get('/search_facture', [App\Http\Controllers\dashboard_controller::class, 'search_facture'])->name('search_facture');
 
@@ -56,6 +56,10 @@ Route::get('/sci_pm/{id}', [App\Http\Controllers\dashboard_controller::class, 's
 Route::get('/sci_ar/{id}', [App\Http\Controllers\dashboard_controller::class, 'sci_ar'])->name('sci_ar');
 
 /********************************************************************* */
+
+Route::post('/form_add_uniq', [App\Http\Controllers\dashboard_controller::class, 'form_add_uniq'])->name('form_add_uniq');
+
+
 
 
 

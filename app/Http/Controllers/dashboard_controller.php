@@ -41,10 +41,7 @@ class dashboard_controller extends Controller
     public function list_facture()
     {
         
-    $l = storage_path('../storage/framework/cache/data/json.json');
-    $json = json_decode(file_get_contents($l), true);
-        $add_facture = $json;
-        return view('dashboard.list_facture')->with('add_facture',$add_facture);
+        return view('dashboard.list_facture')->with("Hello");
     }
 
     public function search()
@@ -295,5 +292,10 @@ class dashboard_controller extends Controller
         }
         
 
+    }
+
+    public function form_add_uniq(Request $request)
+    {
+        return dd();
     }
 }
