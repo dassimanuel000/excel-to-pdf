@@ -60,6 +60,15 @@ Route::get('/sci_pm/{id}', [App\Http\Controllers\dashboard_controller::class, 's
 Route::get('/sci_ar/{id}', [App\Http\Controllers\dashboard_controller::class, 'sci_ar'])->name('sci_ar');
 
 
+
+Route::get('/fourn_BILAN/{id}', [App\Http\Controllers\dashboard_controller::class, 'fourn_BILAN'])->name('fourn_BILAN');
+
+Route::get('/fourn_RAPPORT/{id}', [App\Http\Controllers\dashboard_controller::class, 'fourn_RAPPORT'])->name('fourn_RAPPORT');
+
+
+
+
+
 /********************************************************************* */
 
 Route::post('/form_add_uniq', [App\Http\Controllers\dashboard_controller::class, 'form_add_uniq'])->name('form_add_uniq');

@@ -78,7 +78,7 @@
                             </li>
                             <li class="@if(Route::currentRouteName() == 'admin.facture_fourniture') active open @endif @if(Route::currentRouteName() == 'edit_auto') active open @endif ">
                                 <a href="/facture_fourniture">
-                                    <span class="sub-item">Ajout Manuel de Facture</span>
+                                    <span class="sub-item">Facture Fourniture</span>
                                 </a>
                             </li>
 

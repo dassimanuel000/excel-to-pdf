@@ -162,12 +162,12 @@ class dashboard_controller extends Controller
 
     public function generatePDF()
     {
-        $l = ('./data/data_sci.json');
+        $l = ('./data/LISTECLIENTS.json');
         $json = json_decode(file_get_contents($l), true);
 
         //return json_encode($json);
         $i = count($json);
-        return view('factureSCIPM')->with('i', $i);
+        return view('fourn_BILAN')->with('i', 1);
         /*for ($i=0; $i < 1; $i++) { 
             $filename = 'NOM PDF';
             $data = ['title' => 'Welcome to ItSolutionStuff.com'];
@@ -303,4 +303,44 @@ class dashboard_controller extends Controller
     {
         return dd();
     }
+
+
+    public function fourn_BILAN($id)
+    {
+        $l = ('./data/LISTECLIENTS.json');
+        $json = json_decode(file_get_contents($l), true);
+
+        $filename = $json[$id]['NOM'].' BILAN DE COMPETENCE';
+        $array = ['i' => $id ];
+        $pdf = PDF::loadView('fourn_BILAN', $array)->save('./resultsFournitures/'.$filename.'.pdf');
+        
+        if ($pdf) {
+            return $pdf->download(''.$filename.'.pdf');
+        } else {
+            return redirect('facture_fourniture')->with('Echec', 'UN ERREUR TROP GRAVE!');
+        }
+        
+
+    }
+
+
+    public function fourn_RAPPORT($id)
+    {
+        $l = ('./data/LISTECLIENTS.json');
+        $json = json_decode(file_get_contents($l), true);
+
+        $filename = $json[$id]['NOM'].' RAPPORT DE BILAN DE COMPETENCE';
+        $array = ['i' => $id ];
+        $pdf = PDF::loadView('fourn_RAPPORT', $array)->save('./resultsFournitures/'.$filename.'.pdf');
+        
+        if ($pdf) {
+            return $pdf->download(''.$filename.'.pdf');
+        } else {
+            return redirect('facture_fourniture')->with('Echec', 'UN ERREUR TROP GRAVE!');
+        }
+
+    }
+    
+
+    
 }
