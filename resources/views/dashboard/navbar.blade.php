@@ -62,7 +62,7 @@
                 {{  'admin.add_auto' == request()->path() ? 'active open' : '' }}
                 @if(Route::currentRouteName() == 'admin.list_facture') active open @endif
                 @if(Route::currentRouteName() == 'admin.add_auto') active open @endif
-                @if(Route::currentRouteName() == 'edit_auto') active open @endif
+                @if(Route::currentRouteName() == 'facture_fourniture') active open @endif
                 ">
                     <a data-toggle="collapse" href="#base">
                         <i class="fas fa-layer-group"></i>
@@ -73,6 +73,11 @@
                         <ul class="nav nav-collapse">
                             <li class="@if(Route::currentRouteName() == 'admin.list_facture') active open @endif @if(Route::currentRouteName() == 'edit_auto') active open @endif ">
                                 <a href="/list_facture">
+                                    <span class="sub-item">Ajout Manuel de Facture</span>
+                                </a>
+                            </li>
+                            <li class="@if(Route::currentRouteName() == 'admin.facture_fourniture') active open @endif @if(Route::currentRouteName() == 'edit_auto') active open @endif ">
+                                <a href="/facture_fourniture">
                                     <span class="sub-item">Ajout Manuel de Facture</span>
                                 </a>
                             </li>

@@ -43,6 +43,10 @@ Route::post('/form_add_facture', [App\Http\Controllers\dashboard_controller::cla
 Route::post('/form_add_sci', [App\Http\Controllers\dashboard_controller::class, 'form_add_sci'])->name('form_add_sci');
 
 
+Route::get('/facture_fourniture',[App\Http\Controllers\dashboard_controller::class, 'facture_fourniture'])->name('facture_fourniture');
+
+
+
 /********************************************************************* */
 Route::get('/ac/{id}', [App\Http\Controllers\dashboard_controller::class, 'ac'])->name('ac');
 
@@ -54,6 +58,7 @@ Route::get('/pm/{id}', [App\Http\Controllers\dashboard_controller::class, 'pm'])
 Route::get('/sci_pm/{id}', [App\Http\Controllers\dashboard_controller::class, 'sci_pm'])->name('sci_pm');
 
 Route::get('/sci_ar/{id}', [App\Http\Controllers\dashboard_controller::class, 'sci_ar'])->name('sci_ar');
+
 
 /********************************************************************* */
 

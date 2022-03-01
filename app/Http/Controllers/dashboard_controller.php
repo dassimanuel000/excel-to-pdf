@@ -49,6 +49,11 @@ class dashboard_controller extends Controller
         return view('dashboard.search_facture');
     }
 
+    public function facture_fourniture()
+    {
+        return view('dashboard.facture_fourniture');
+    }
+
     
     public function form_add_sci(Request $request)
     {
